@@ -11,8 +11,8 @@ from pathlib import Path
 
 import py3Dmol
 import streamlit as st
+import streamlit.components.v1 as components
 from streamlit_option_menu import option_menu
-from stmol import showmol
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -319,7 +319,7 @@ elif nav == "Structure 3D":
             view.setStyle(style_map.get(style, {"cartoon": {"color": "spectrum"}}))
             view.setBackgroundColor(bg_color)
             view.zoomTo()
-            showmol(view, height=520, width=780)
+            components.html(view._make_html(), height=520, width=780)
     else:
         st.error("La prédiction 3D a échoué. Vérifiez votre connexion ou réessayez plus tard.")
 
@@ -506,7 +506,7 @@ elif nav == "Mutagenèse in silico":
                     v_wt.setStyle({"cartoon": {"color": "spectrum"}})
                     v_wt.setBackgroundColor("#ffffff")
                     v_wt.zoomTo()
-                    showmol(v_wt, height=400, width=440)
+                    components.html(v_wt._make_html(), height=400, width=440)
                     st.download_button(
                         "📥 .PDB Wild-Type",
                         data=wt_pdb,
@@ -530,7 +530,7 @@ elif nav == "Mutagenèse in silico":
                     v_mt.setStyle({"cartoon": {"color": "spectrum"}})
                     v_mt.setBackgroundColor("#ffffff")
                     v_mt.zoomTo()
-                    showmol(v_mt, height=400, width=440)
+                    components.html(v_mt._make_html(), height=400, width=440)
                     st.download_button(
                         f"📥 .PDB {change_desc}",
                         data=mt_pdb,
@@ -551,7 +551,7 @@ elif nav == "Mutagenèse in silico":
                         v.setStyle({"cartoon": {"color": "spectrum"}})
                         v.setBackgroundColor("#ffffff")
                         v.zoomTo()
-                        showmol(v, height=480, width=760)
+                        components.html(v._make_html(), height=480, width=760)
                         st.download_button(
                             f"📥 Télécharger .PDB ({change_desc})",
                             data=mt_pdb,
