@@ -4,6 +4,8 @@
 ![Streamlit](https://img.shields.io/badge/Framework-Streamlit-FF4B4B.svg)
 ![Bioinformatics](https://img.shields.io/badge/Field-Bioinformatics-green.svg)
 
+## 🌐 [Accéder à la démo en direct (Live Demo)](https://neopept-pro-hhdyudjrckmyx9atfqkv9u.streamlit.app/)
+
 **NeoPept Pro** est une plateforme SaaS conçue pour les chercheurs en biotechnologie et ingénieurs en formulation. Elle combine la puissance de l'IA (ESMFold) et la précision des algorithmes biophysiques pour accélérer le design de nouvelles protéines.
 
 ## 🚀 Fonctionnalités Clés
